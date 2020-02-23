@@ -11,10 +11,18 @@ Machine learning project for stock market analysis.
   
   One issue with increasing the number of features is the increase in dimentionalty. The higher the dimensionality of your model the more difficult it is to train it and less reliable it becomes. To account for this only the most relevant features are used to train the model. This problem can also be addressed by feeding the model the same original data with added random noise multiple times.
   
+  # Feature Selection and Reduction
+
+  Only features that are independent and have correlation with the predictor shall be used in order to ensure the model is as accurate as it can be. One idea is to use CatBoost to reduce features and to cross-validate the results.
+  
   # Data Smothing / Low Pass Filter
   
   In order to reduce the influence of noise on the model a the data will be smothed by log function before training the model, and converted back to the original scale when evaluating the prediction. 
     
   # Decomposition
   
-  In order to reduce the model's complexity and predict more accurate results, the data will be decomposed in the form of f(x) = T(x) + T(x) + T(x), where f(x) is the original data decomposed into T(x) = Trend, S(x) = Seasonality and R(x) = Residual. Each decomposed function derived from a certain model and trained separately. The final prediction will be the sum of the evaluations of each decomposed function on the form of &Ycirc; = &Tcirc; + &Scirc; + &Rcirc; 
+  In order to reduce the model's complexity and predict more accurate results, the data will be decomposed in the form of f(x) = t(x) + s(x) + r(x), where f(x) is the original data decomposed into t(x) = Trend, s(x) = Seasonality and r(x) = Residual. Each decomposed function derived from a certain model and trained separately. The final prediction will be the sum of the evaluations of each decomposed function on the form of Y^ = t^ + s^ + r^.
+  
+  # Train, Validation and Test
+
+  The data will be split into 3 sets for training, validating and testing. With 70% of the data used for training, 20% used for validation and the remining 10% for testing. 
