@@ -17,4 +17,4 @@ Machine learning project for stock market analysis.
     
   # Decomposition
   
-  In order to reduce the model's complexity and predict more accurate results, the data will be decomposed in the form of f(x) = t(x) + s(x) + r(x), where f(x) is the original data decomposed into t(x) = trend, s(x) = seasonality and r(x) = residual. Each decomposed function derived from a certain model and trained separately. The final prediction will be the sum of the evaluations of each decomposed function on the form of &Ycirc; = &tcirc; + &scirc; + &rcirc; 
+  In order to reduce the model's complexity and predict more accurate results, the data will be decomposed in the form of f(x) = T(x) + T(x) + T(x), where f(x) is the original data decomposed into T(x) = Trend, S(x) = Seasonality and R(x) = Residual. Each decomposed function derived from a certain model and trained separately. The final prediction will be the sum of the evaluations of each decomposed function on the form of &Ycirc; = &Tcirc; + &Scirc; + &Rcirc; 
